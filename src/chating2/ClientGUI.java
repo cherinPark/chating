@@ -34,20 +34,20 @@ public class ClientGUI extends JFrame implements ActionListener, Runnable{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		try {
-            socket = new Socket("127.0.0.1", 2022);
-            System.out.println("서버 : " + socket);
+            	    socket = new Socket("127.0.0.1", 2022);
+            	    System.out.println("서버 : " + socket);
         
-           in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-           out = new PrintWriter(socket.getOutputStream(), true);
+           	    in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+           	    out = new PrintWriter(socket.getOutputStream(), true);
 
-        } catch (Exception e) {
-            System.out.println(" * 접속 오류 발생 * " + e);
-        }
+        	} catch (Exception e) {
+            	    System.out.println(" * 접속 오류 발생 * " + e);
+       		}
 
-        Thread client = new Thread(this);
+        	Thread client = new Thread(this);
 		
-        client.start();
-    }
+        	client.start();
+    	}
 
     public void run() {
         try {
